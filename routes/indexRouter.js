@@ -23,6 +23,12 @@ indexRouter.get('/new', (req, res) => {
     res.render("form")
 })
 
+indexRouter.get('/detail/:id', (req, res) => {
+    console.log(req.params)
+    let message = messages[req.params.id]
+    res.render("detail", {message: message})
+})
+
 indexRouter.post('/new', (req, res) =>{
     let author = req.body.author
     let message = req.body.newMessage

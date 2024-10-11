@@ -5,9 +5,10 @@
 </head>
 
 <body>
+    <a href="/new"">New Message</a>
     <ul>
-        <% messages.forEach((message)=> { %>
-            <%- include('./message', {message: message}); %>
+        <% messages.forEach((message, i)=> { %>
+            <%- include('./message', {message: message, index: i}); %>
                 <% }); %>
     </ul>
 </body>
