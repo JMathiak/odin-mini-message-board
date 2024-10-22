@@ -1,14 +1,16 @@
 <html>
 
 <head>
-    <title>Homepage</title>
+    <title>
+        <%= title %>
+    </title>
 </head>
 
 <body>
     <a href="/new"">New Message</a>
     <ul>
-        <% messages.forEach((message, i)=> { %>
-            <%- include('./message', {message: message, index: i}); %>
+        <% messages.forEach((message)=> { %>
+            <%- include('./message', {message: message, index: message.id}); %>
                 <% }); %>
     </ul>
 </body>
