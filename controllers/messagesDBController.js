@@ -20,7 +20,7 @@ async function postNewMessage(req, res){
 async function getDetails(req, res){
     let messageId = req.params.id
     let messageObj = await db.findMessage(messageId)
-    res.render("detail", {message: messageObj})
+    res.render("detail", {index: messageObj.id, message: messageObj})
 }
 
 async function deleteMessage(req, res){
